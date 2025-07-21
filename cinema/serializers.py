@@ -15,3 +15,7 @@ class MovieSerializer(serializers.ModelSerializer):
         instance.duration = validated_data.get("duration", instance.duration)
         instance.save()
         return instance
+
+    class Meta:
+        model = Movie
+        fields = ["id", "title", "description", "duration"]
